@@ -1,0 +1,429 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>位运算 | 总是遗忘</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="pengkw">
+    
+    <meta name="description" itemprop="description" content="记录位运算的相关运用">
+    
+    
+    
+    
+    <link rel="alternate" href="/atom.xml" title="总是遗忘" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="总是遗忘" title="总是遗忘"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="总是遗忘">总是遗忘</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:github.com/pengkw">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/11/15/bit_operation/" title="位运算" itemprop="url">位运算</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="https://github.com/pengkw" title="pengkw">pengkw</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-11-15T05:29:12.000Z" itemprop="datePublished">11月 15 2014</time>
+    更新日期:<time datetime="2014-11-17T06:02:55.000Z" itemprop="dateModified">11月 17 2014</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#与（&）"><span class="toc-number">1.</span> <span class="toc-text">与（&）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#判断奇偶数"><span class="toc-number">1.1.</span> <span class="toc-text">判断奇偶数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#取第k位"><span class="toc-number">1.2.</span> <span class="toc-text">取第k位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第k位置为0"><span class="toc-number">1.3.</span> <span class="toc-text">第k位置为0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#取最后k位"><span class="toc-number">1.4.</span> <span class="toc-text">取最后k位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断一个数是不是2的幂"><span class="toc-number">1.5.</span> <span class="toc-text">判断一个数是不是2的幂</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2的n次方取余"><span class="toc-number">1.6.</span> <span class="toc-text">2的n次方取余</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#或（|）"><span class="toc-number">2.</span> <span class="toc-text">或（|）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第k位置为1"><span class="toc-number">2.1.</span> <span class="toc-text">第k位置为1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最后一位置为1"><span class="toc-number">2.2.</span> <span class="toc-text">最后一位置为1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将最后一位置为0"><span class="toc-number">2.3.</span> <span class="toc-text">将最后一位置为0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将奇数变为偶数"><span class="toc-number">2.4.</span> <span class="toc-text">将奇数变为偶数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将末k位变成1"><span class="toc-number">2.5.</span> <span class="toc-text">将末k位变成1</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异或（^）"><span class="toc-number">3.</span> <span class="toc-text">异或（^）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#将最后一位取反"><span class="toc-number">3.1.</span> <span class="toc-text">将最后一位取反</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将第K位取反"><span class="toc-number">3.2.</span> <span class="toc-text">将第K位取反</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将末K位取反"><span class="toc-number">3.3.</span> <span class="toc-text">将末K位取反</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#交换两个数的值"><span class="toc-number">3.4.</span> <span class="toc-text">交换两个数的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断符号是否相同"><span class="toc-number">3.5.</span> <span class="toc-text">判断符号是否相同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#求平均值，防止溢出"><span class="toc-number">3.6.</span> <span class="toc-text">求平均值，防止溢出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取一个数绝对值"><span class="toc-number">3.7.</span> <span class="toc-text">获取一个数绝对值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非（~）"><span class="toc-number">4.</span> <span class="toc-text">非（~）</span></a></li></ol>
+		</div>
+		
+		<p>总是容易遗忘位运算的用法，今天特意做个记录</p>
+<h2 id="与（&amp;）">与（&amp;）</h2>
+<p>先看下面的几个运算结果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">0</span> & <span class="number">0</span> = <span class="number">0</span>  </div><div class="line"><span class="number">0</span> & <span class="number">1</span> = <span class="number">0</span>  </div><div class="line"><span class="number">1</span> & <span class="number">0</span> = <span class="number">0</span>  </div><div class="line"><span class="number">1</span> & <span class="number">1</span> = <span class="number">1</span></div></pre></td></tr></table></figure>
+
+<p>通过这四个运算式可以得出以下几个结论：</p>
+<ol>
+<li>由1、2、3、4可以得出只有两边都是1的情况下运算结果才为1</li>
+<li>由1、3可以得出任何数与0相与结果为0</li>
+<li>由2、4可以得出任何数与1相与结果不变<br>这样我们就得出了以上3个结论，那么这些结论有什么用呢？<h3 id="判断奇偶数">判断奇偶数</h3>
+应用上面的结论3，与1相与，如果结果为0，则表示是偶数；如果结果为1，则表示是奇数</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a&<span class="number">1</span></div></pre></td></tr></table></figure>
+
+<h3 id="取第k位">取第k位</h3>
+<p>先右移k位，在与1相与。应用的是上面的结论3</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a&gt;&gt;(k - <span class="number">1</span>)&<span class="number">1</span></div></pre></td></tr></table></figure>
+
+<h3 id="第k位置为0">第k位置为0</h3>
+<p>先左移k位，在与1相与。应用的是上面的结论2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a&~(<span class="number">1</span> &lt;&lt; (k - <span class="number">1</span>))</div></pre></td></tr></table></figure>
+
+<h3 id="取最后k位">取最后k位</h3>
+<p>先左移k+1位，然后再减1，即变成一个k位都是1的数，这样与1相与还是本身，就能获取后k位的了。应用的是上面的结论3</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a&((<span class="number">1</span> &lt;&lt; k) - <span class="number">1</span>)</div></pre></td></tr></table></figure>
+
+<h3 id="判断一个数是不是2的幂">判断一个数是不是2的幂</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">((x&(x-<span class="number">1</span>))==<span class="number">0</span>)&&(x!=<span class="number">0</span>)</div></pre></td></tr></table></figure>
+
+<p>如果一个数是2的幂，则其二进制表示形式类似1000，则x-1为0111，那么相与的结果为0<br>需要排除x=0的情况  </p>
+<h3 id="2的n次方取余">2的n次方取余</h3>
+<p>正常表示为： x % y，其中y为2的n次方，下面是位运算计算方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x & (y - <span class="number">1</span>)</div></pre></td></tr></table></figure>
+
+<p>y是2的n次方，则y的二进制表示类似1000，y-1则为0111，然后与x相与的结果就是取最后几个为1的位  </p>
+<h2 id="或（|）">或（|）</h2>
+<p>先看下面的几个运算结果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">0</span> | <span class="number">0</span> = <span class="number">0</span>  </div><div class="line"><span class="number">0</span> | <span class="number">1</span> = <span class="number">1</span>  </div><div class="line"><span class="number">1</span> | <span class="number">0</span> = <span class="number">1</span>  </div><div class="line"><span class="number">1</span> | <span class="number">1</span> = <span class="number">1</span></div></pre></td></tr></table></figure>
+
+<p>通过这四个运算式可以得出以下几个结论：</p>
+<ol>
+<li>由1、2、3、4可以得出只有两边都是0的情况下运算结果才为0</li>
+<li>由1、3可以得出任何数与0相或结果不变</li>
+<li>由2、4可以得出任何数与1相与结果都是1</li>
+</ol>
+<h3 id="第k位置为1">第k位置为1</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a | (<span class="number">1</span> &lt;&lt; (k - <span class="number">1</span>))</div></pre></td></tr></table></figure>
+
+<h3 id="最后一位置为1">最后一位置为1</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a | <span class="number">1</span></div></pre></td></tr></table></figure>
+
+<h3 id="将最后一位置为0">将最后一位置为0</h3>
+<p>应用上面的结论3，任何数与1相与结果为1，然后减1可以将奇数变为相近的偶数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(a | <span class="number">1</span>) - <span class="number">1</span></div></pre></td></tr></table></figure>
+
+<h3 id="将奇数变为偶数">将奇数变为偶数</h3>
+<p>应用上面的结论3，任何数与1相与结果为1，然后减1可以将奇数变为相近的偶数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(a | <span class="number">1</span>) - <span class="number">1</span></div></pre></td></tr></table></figure>
+
+<h3 id="将末k位变成1">将末k位变成1</h3>
+<p>应用上面的结论3，任何数与1相与结果为1，然后减1可以将奇数变为相近的偶数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a | ((<span class="number">1</span> &lt;&lt; k) -<span class="number">1</span>)</div></pre></td></tr></table></figure>
+
+<h2 id="异或（^）">异或（^）</h2>
+<p>先看下面的几个运算结果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">0</span> ^ <span class="number">0</span> = <span class="number">0</span>  </div><div class="line"><span class="number">0</span> ^ <span class="number">1</span> = <span class="number">1</span>  </div><div class="line"><span class="number">1</span> ^ <span class="number">0</span> = <span class="number">1</span>  </div><div class="line"><span class="number">1</span> ^ <span class="number">1</span> = <span class="number">0</span></div></pre></td></tr></table></figure>
+
+<p>通过这四个运算式可以得出以下几个结论：</p>
+<ol>
+<li>由1、2、3、4可以得出只有两边相同为0，两边不同为1</li>
+<li>由1、3可以得出任何数与0相结果不变</li>
+<li>由2、4可以得出任何数与1相异或结果取反</li>
+</ol>
+<h3 id="将最后一位取反">将最后一位取反</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a ^ <span class="number">1</span></div></pre></td></tr></table></figure>
+
+<h3 id="将第K位取反">将第K位取反</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a ^ (<span class="number">1</span> &lt;&lt; (k - <span class="number">1</span>))</div></pre></td></tr></table></figure>
+
+<h3 id="将末K位取反">将末K位取反</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a ^ ((<span class="number">1</span> &lt;&lt; k )- <span class="number">1</span>)</div></pre></td></tr></table></figure>
+
+<h3 id="交换两个数的值">交换两个数的值</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x ^= y</div><div class="line">y ^= x</div><div class="line">x ^= y</div></pre></td></tr></table></figure>
+
+<h3 id="判断符号是否相同">判断符号是否相同</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(x ^ y) &gt;= <span class="number">0</span></div></pre></td></tr></table></figure>
+
+<p>如果符号位相同则异或的结果1</p>
+<h3 id="求平均值，防止溢出">求平均值，防止溢出</h3>
+<p>求两个数的平均值一般想到的就是:(x + y) / 2，但是当x、y很大的情况下，二者相加的结果可能会溢出。可以通过位运算来避免</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x & y + ((x ^ y) &gt;&gt; <span class="number">1</span>)</div></pre></td></tr></table></figure>
+
+<p>怎么来理解这个表达式呢，首先我们单纯的将x + y按照位相加来理解，那么每个位上相加的结果会有三种组合：</p>
+<ol>
+<li>两位上都是1</li>
+<li>只有1位为1（包含1 0 和 0 1）</li>
+<li>两位都是0<br>拆分成这种形式后我们分别对每部分求平均值，于是</li>
+<li>两位上都是1的平均值结果为： x &amp; y</li>
+<li>只有1位为1（包含1 0 和 0 1）的平均值为：(x ^ y) &gt;&gt; 1</li>
+<li>两位都是0的平均值为0<br>这三部分相加的结果就是上面的表达式  </li>
+</ol>
+<h3 id="获取一个数绝对值">获取一个数绝对值</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(n ^ (n &gt;&gt; <span class="number">31</span>)) - (n &gt;&gt; <span class="number">31</span>)</div></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(n + (n &gt;&gt; <span class="number">31</span>)) ^ (n &gt;&gt; <span class="number">31</span>)</div></pre></td></tr></table></figure>
+
+<h2 id="非（~）">非（~）</h2>
+<p>先看下面的几个运算结果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">~<span class="number">0</span> = <span class="number">1</span>  </div><div class="line">~<span class="number">1</span> = <span class="number">0</span></div></pre></td></tr></table></figure>
+
+<p>非是单目运算符，所以只有两个运算结果。<br>通过这两个运算式可以得出的结论：</p>
+<ol>
+<li>非的结果是按位取反</li>
+</ol>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/位运算/">位运算</a>
+  </div>
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="https://github.com/pengkw/2014/11/15/bit_operation/" data-title="位运算 | 总是遗忘" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2014/11/14/hexo-manual/"  title="Hexo使用手册">
+ <strong>NEXT:</strong><br/> 
+ <span>Hexo使用手册
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#与（&）"><span class="toc-number">1.</span> <span class="toc-text">与（&）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#判断奇偶数"><span class="toc-number">1.1.</span> <span class="toc-text">判断奇偶数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#取第k位"><span class="toc-number">1.2.</span> <span class="toc-text">取第k位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第k位置为0"><span class="toc-number">1.3.</span> <span class="toc-text">第k位置为0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#取最后k位"><span class="toc-number">1.4.</span> <span class="toc-text">取最后k位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断一个数是不是2的幂"><span class="toc-number">1.5.</span> <span class="toc-text">判断一个数是不是2的幂</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2的n次方取余"><span class="toc-number">1.6.</span> <span class="toc-text">2的n次方取余</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#或（|）"><span class="toc-number">2.</span> <span class="toc-text">或（|）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第k位置为1"><span class="toc-number">2.1.</span> <span class="toc-text">第k位置为1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最后一位置为1"><span class="toc-number">2.2.</span> <span class="toc-text">最后一位置为1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将最后一位置为0"><span class="toc-number">2.3.</span> <span class="toc-text">将最后一位置为0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将奇数变为偶数"><span class="toc-number">2.4.</span> <span class="toc-text">将奇数变为偶数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将末k位变成1"><span class="toc-number">2.5.</span> <span class="toc-text">将末k位变成1</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异或（^）"><span class="toc-number">3.</span> <span class="toc-text">异或（^）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#将最后一位取反"><span class="toc-number">3.1.</span> <span class="toc-text">将最后一位取反</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将第K位取反"><span class="toc-number">3.2.</span> <span class="toc-text">将第K位取反</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将末K位取反"><span class="toc-number">3.3.</span> <span class="toc-text">将末K位取反</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#交换两个数的值"><span class="toc-number">3.4.</span> <span class="toc-text">交换两个数的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断符号是否相同"><span class="toc-number">3.5.</span> <span class="toc-text">判断符号是否相同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#求平均值，防止溢出"><span class="toc-number">3.6.</span> <span class="toc-text">求平均值，防止溢出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取一个数绝对值"><span class="toc-number">3.7.</span> <span class="toc-text">获取一个数绝对值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非（~）"><span class="toc-number">4.</span> <span class="toc-text">非（~）</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/hexo/" title="hexo">hexo<sup>2</sup></a></li>
+		
+			<li><a href="/tags/位运算/" title="位运算">位运算<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2014 
+		
+		<a href="https://github.com/pengkw" target="_blank" title="pengkw">pengkw</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"pengkw"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+  </body>
+</html>
