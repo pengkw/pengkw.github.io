@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="https://github.com/pengkw/"/>
-  <updated>2014-11-19T06:03:57.833Z</updated>
+  <updated>2014-11-19T06:06:52.832Z</updated>
   <id>https://github.com/pengkw/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://github.com/pengkw/2014/11/19/storm-learn/"/>
     <id>https://github.com/pengkw/2014/11/19/storm-learn/</id>
     <published>2014-11-19T03:39:23.000Z</published>
-    <updated>2014-11-19T06:03:08.000Z</updated>
+    <updated>2014-11-19T06:06:16.000Z</updated>
     <content type="html"><![CDATA[<h2 id="了解storm">了解storm</h2>
 <p>近期打算看看storm，于是搭建了环境来试试。主要记录搭建的过程，以备之后需要。<br><a href="https://github.com/apache/storm" target="_blank" rel="external">storm github</a>上有源码，也可以到<a href="http://storm.apache.org/documentation/Home.html" target="_blank" rel="external">官网</a>上下载编译后的。<br>可以到<a href="http://xumingming.sinaapp.com/category/storm/" target="_blank" rel="external">这个博客</a>看看相关的中文文档，非常详细。</p>
 <h2 id="搭建环境">搭建环境</h2>
@@ -39,7 +39,7 @@
     
       <category term="storm" scheme="https://github.com/pengkw/tags/storm/"/>
     
-      <category term="数据" scheme="https://github.com/pengkw/categories/%E6%95%B0%E6%8D%AE/"/>
+      <category term="storm" scheme="https://github.com/pengkw/categories/storm/"/>
     
   </entry>
   
@@ -48,7 +48,7 @@
     <link href="https://github.com/pengkw/2014/11/15/bit_operation/"/>
     <id>https://github.com/pengkw/2014/11/15/bit_operation/</id>
     <published>2014-11-15T05:29:12.000Z</published>
-    <updated>2014-11-17T06:07:47.000Z</updated>
+    <updated>2014-11-19T06:06:45.000Z</updated>
     <content type="html"><![CDATA[<p>总是容易遗忘位运算的用法，今天特意做个记录</p>
 <h2 id="与（&amp;）">与（&amp;）</h2>
 <p>先看下面的几个运算结果</p>
@@ -173,6 +173,8 @@
     </summary>
     
       <category term="位运算" scheme="https://github.com/pengkw/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    
+      <category term="计算机基础" scheme="https://github.com/pengkw/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
