@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="https://github.com/pengkw/"/>
-  <updated>2014-11-17T06:03:25.402Z</updated>
+  <updated>2014-11-19T06:03:57.833Z</updated>
   <id>https://github.com/pengkw/</id>
   
   <author>
@@ -15,11 +15,40 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[storm-learn]]></title>
+    <link href="https://github.com/pengkw/2014/11/19/storm-learn/"/>
+    <id>https://github.com/pengkw/2014/11/19/storm-learn/</id>
+    <published>2014-11-19T03:39:23.000Z</published>
+    <updated>2014-11-19T06:03:08.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="了解storm">了解storm</h2>
+<p>近期打算看看storm，于是搭建了环境来试试。主要记录搭建的过程，以备之后需要。<br><a href="https://github.com/apache/storm" target="_blank" rel="external">storm github</a>上有源码，也可以到<a href="http://storm.apache.org/documentation/Home.html" target="_blank" rel="external">官网</a>上下载编译后的。<br>可以到<a href="http://xumingming.sinaapp.com/category/storm/" target="_blank" rel="external">这个博客</a>看看相关的中文文档，非常详细。</p>
+<h2 id="搭建环境">搭建环境</h2>
+<p>虽然上面那个博客有介绍环境的搭建，但是感觉不够详细，推荐看这个<a href="http://idoall.org/home.php?mod=space&amp;uid=1&amp;do=blog&amp;id=546" target="_blank" rel="external">博客</a></p>
+<h2 id="问题">问题</h2>
+<ol>
+<li>编译的时候，有些依赖的jar找不到，更改maven仓库地址重新编译。<a href="http://repo.gozap.com/repos/" target="_blank" rel="external">http://repo.gozap.com/repos/</a> <a href="https://clojars.org/repo/" target="_blank" rel="external">https://clojars.org/repo/</a></li>
+<li>运行storm-starter出现java.lang.NoSuchMethodError: org.yaml.snakeyaml.Yaml错误，修改pom文件</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">     &lt;groupId&gt;org.testng&lt;/groupId&gt;</div><div class="line">     &lt;artifactId&gt;testng&lt;/artifactId&gt;</div><div class="line">     &lt;version&gt;<span class="number">6.8</span>.<span class="number">5</span>&lt;/version&gt;</div><div class="line">     &lt;scope&gt;test&lt;/scope&gt;</div><div class="line">     &lt;!--增加这部分避免该错误--&gt;</div><div class="line">     &lt;exclusions&gt;</div><div class="line">         &lt;exclusion&gt;</div><div class="line">             &lt;artifactId&gt;snakeyaml&lt;/artifactId&gt;</div><div class="line">             &lt;groupId&gt;org.yaml&lt;/groupId&gt;</div><div class="line">         &lt;/exclusion&gt;</div><div class="line">      &lt;/exclusions&gt;</div><div class="line">   &lt;/dependency&gt;</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[主要介绍storm环境的搭建以及发现好的博客]]>
+    
+    </summary>
+    
+      <category term="storm" scheme="https://github.com/pengkw/tags/storm/"/>
+    
+      <category term="数据" scheme="https://github.com/pengkw/categories/%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[位运算]]></title>
     <link href="https://github.com/pengkw/2014/11/15/bit_operation/"/>
     <id>https://github.com/pengkw/2014/11/15/bit_operation/</id>
     <published>2014-11-15T05:29:12.000Z</published>
-    <updated>2014-11-17T06:02:55.000Z</updated>
+    <updated>2014-11-17T06:07:47.000Z</updated>
     <content type="html"><![CDATA[<p>总是容易遗忘位运算的用法，今天特意做个记录</p>
 <h2 id="与（&amp;）">与（&amp;）</h2>
 <p>先看下面的几个运算结果</p>
@@ -29,9 +58,10 @@
 <ol>
 <li>由1、2、3、4可以得出只有两边都是1的情况下运算结果才为1</li>
 <li>由1、3可以得出任何数与0相与结果为0</li>
-<li>由2、4可以得出任何数与1相与结果不变<br>这样我们就得出了以上3个结论，那么这些结论有什么用呢？<h3 id="判断奇偶数">判断奇偶数</h3>
-应用上面的结论3，与1相与，如果结果为0，则表示是偶数；如果结果为1，则表示是奇数</li>
+<li>由2、4可以得出任何数与1相与结果不变<br>这样我们就得出了以上3个结论，那么这些结论有什么用呢？  </li>
 </ol>
+<h3 id="判断奇偶数">判断奇偶数</h3>
+<p>应用上面的结论3，与1相与，如果结果为0，则表示是偶数；如果结果为1，则表示是奇数</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a&<span class="number">1</span></div></pre></td></tr></table></figure>
 
 <h3 id="取第k位">取第k位</h3>

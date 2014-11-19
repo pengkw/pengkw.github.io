@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hexo使用手册 | 总是遗忘</title>
+    <title>storm-learn | 总是遗忘</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="pengkw">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+    <meta name="description" itemprop="description" content="主要介绍storm环境的搭建以及发现好的博客">
     
     
     
@@ -68,15 +68,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/11/14/hexo-manual/" title="Hexo使用手册" itemprop="url">Hexo使用手册</a>
+      <a href="/2014/11/19/storm-learn/" title="storm-learn" itemprop="url">storm-learn</a>
   </h1>
   <p class="article-author">By
     
       <a href="https://github.com/pengkw" title="pengkw">pengkw</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-11-14T09:42:27.000Z" itemprop="datePublished">11月 14 2014</time>
-    更新日期:<time datetime="2014-11-14T09:42:27.000Z" itemprop="dateModified">11月 14 2014</time>
+    <time datetime="2014-11-19T03:39:23.000Z" itemprop="datePublished">11月 19 2014</time>
+    更新日期:<time datetime="2014-11-19T06:03:08.000Z" itemprop="dateModified">11月 19 2014</time>
     
   </p>
 </header>
@@ -85,42 +85,40 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#了解storm"><span class="toc-number">1.</span> <span class="toc-text">了解storm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建环境"><span class="toc-number">2.</span> <span class="toc-text">搭建环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">3.</span> <span class="toc-text">问题</span></a></li></ol>
 		</div>
 		
-		<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+		<h2 id="了解storm">了解storm</h2>
+<p>近期打算看看storm，于是搭建了环境来试试。主要记录搭建的过程，以备之后需要。<br><a href="https://github.com/apache/storm" target="_blank" rel="external">storm github</a>上有源码，也可以到<a href="http://storm.apache.org/documentation/Home.html" target="_blank" rel="external">官网</a>上下载编译后的。<br>可以到<a href="http://xumingming.sinaapp.com/category/storm/" target="_blank" rel="external">这个博客</a>看看相关的中文文档，非常详细。</p>
+<h2 id="搭建环境">搭建环境</h2>
+<p>虽然上面那个博客有介绍环境的搭建，但是感觉不够详细，推荐看这个<a href="http://idoall.org/home.php?mod=space&amp;uid=1&amp;do=blog&amp;id=546" target="_blank" rel="external">博客</a></p>
+<h2 id="问题">问题</h2>
+<ol>
+<li>编译的时候，有些依赖的jar找不到，更改maven仓库地址重新编译。<a href="http://repo.gozap.com/repos/" target="_blank" rel="external">http://repo.gozap.com/repos/</a> <a href="https://clojars.org/repo/" target="_blank" rel="external">https://clojars.org/repo/</a></li>
+<li>运行storm-starter出现java.lang.NoSuchMethodError: org.yaml.snakeyaml.Yaml错误，修改pom文件</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">     &lt;groupId&gt;org.testng&lt;/groupId&gt;</div><div class="line">     &lt;artifactId&gt;testng&lt;/artifactId&gt;</div><div class="line">     &lt;version&gt;<span class="number">6.8</span>.<span class="number">5</span>&lt;/version&gt;</div><div class="line">     &lt;scope&gt;test&lt;/scope&gt;</div><div class="line">     &lt;!--增加这部分避免该错误--&gt;</div><div class="line">     &lt;exclusions&gt;</div><div class="line">         &lt;exclusion&gt;</div><div class="line">             &lt;artifactId&gt;snakeyaml&lt;/artifactId&gt;</div><div class="line">             &lt;groupId&gt;org.yaml&lt;/groupId&gt;</div><div class="line">         &lt;/exclusion&gt;</div><div class="line">      &lt;/exclusions&gt;</div><div class="line">   &lt;/dependency&gt;</div></pre></td></tr></table></figure>
 
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/hexo/">hexo</a>
+  <span></span> <a href="/tags/storm/">storm</a>
   </div>
 
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/数据/">数据</a>
+</div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="https://github.com/pengkw/2014/11/14/hexo-manual/" data-title="Hexo使用手册 | 总是遗忘" data-tsina="null" class="share clearfix">
+  <div data-url="https://github.com/pengkw/2014/11/19/storm-learn/" data-title="storm-learn | 总是遗忘" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -129,19 +127,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/11/15/bit_operation/" title="位运算">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  位运算</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/11/13/create-hexo-blog/"  title="使用hexo、github搭建免费博客">
+<a href="/2014/11/15/bit_operation/"  title="位运算">
  <strong>NEXT:</strong><br/> 
- <span>使用hexo、github搭建免费博客
+ <span>位运算
 </span>
 </a>
 </div>
@@ -158,7 +148,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#了解storm"><span class="toc-number">1.</span> <span class="toc-text">了解storm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建环境"><span class="toc-number">2.</span> <span class="toc-text">搭建环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">3.</span> <span class="toc-text">问题</span></a></li></ol>
   </div>
 
 <div id="asidepart">
