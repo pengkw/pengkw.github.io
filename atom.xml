@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="https://github.com/pengkw/"/>
-  <updated>2015-01-15T02:53:55.642Z</updated>
+  <updated>2015-01-15T02:55:51.109Z</updated>
   <id>https://github.com/pengkw/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[third-site-link]]></title>
+    <title><![CDATA[第三方网站资源整理]]></title>
     <link href="https://github.com/pengkw/2015/01/15/third-site-link/"/>
     <id>https://github.com/pengkw/2015/01/15/third-site-link/</id>
     <published>2015-01-15T02:39:42.000Z</published>
-    <updated>2015-01-15T02:52:46.000Z</updated>
+    <updated>2015-01-15T02:55:33.000Z</updated>
     <content type="html"><![CDATA[<h1 id="技术">技术</h1>
 <h2 id="Android学习资源整理">Android学习资源整理</h2>
 <p><a href="http://hukai.me/android-training-course-in-chinese/index.html" target="_blank" rel="external">Google Android官方培训课程中文版</a><br><a href="http://lzyblog.com/" target="_blank" rel="external">lzy’s blog</a></p>
@@ -34,11 +34,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[storm-learn]]></title>
+    <title><![CDATA[storm学习]]></title>
     <link href="https://github.com/pengkw/2014/11/19/storm-learn/"/>
     <id>https://github.com/pengkw/2014/11/19/storm-learn/</id>
     <published>2014-11-19T03:39:23.000Z</published>
-    <updated>2014-11-19T06:06:16.000Z</updated>
+    <updated>2015-01-15T02:55:13.000Z</updated>
     <content type="html"><![CDATA[<h2 id="了解storm">了解storm</h2>
 <p>近期打算看看storm，于是搭建了环境来试试。主要记录搭建的过程，以备之后需要。<br><a href="https://github.com/apache/storm" target="_blank" rel="external">storm github</a>上有源码，也可以到<a href="http://storm.apache.org/documentation/Home.html" target="_blank" rel="external">官网</a>上下载编译后的。<br>可以到<a href="http://xumingming.sinaapp.com/category/storm/" target="_blank" rel="external">这个博客</a>看看相关的中文文档，非常详细。</p>
 <h2 id="搭建环境">搭建环境</h2>
