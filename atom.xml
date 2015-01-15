@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="https://github.com/pengkw/"/>
-  <updated>2014-11-19T06:06:52.832Z</updated>
+  <updated>2015-01-15T02:53:55.642Z</updated>
   <id>https://github.com/pengkw/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[third-site-link]]></title>
+    <link href="https://github.com/pengkw/2015/01/15/third-site-link/"/>
+    <id>https://github.com/pengkw/2015/01/15/third-site-link/</id>
+    <published>2015-01-15T02:39:42.000Z</published>
+    <updated>2015-01-15T02:52:46.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="技术">技术</h1>
+<h2 id="Android学习资源整理">Android学习资源整理</h2>
+<p><a href="http://hukai.me/android-training-course-in-chinese/index.html" target="_blank" rel="external">Google Android官方培训课程中文版</a><br><a href="http://lzyblog.com/" target="_blank" rel="external">lzy’s blog</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[整理一些好的网站链接]]>
+    
+    </summary>
+    
+      <category term="整理" scheme="https://github.com/pengkw/tags/%E6%95%B4%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[storm-learn]]></title>
