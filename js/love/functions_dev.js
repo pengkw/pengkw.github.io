@@ -8,13 +8,13 @@ $(function () {
 	$loveHeart = $("#loveHeart");
 	var offsetX = $loveHeart.width() / 2;
 	var offsetY = $loveHeart.height() / 2 - 55;
-    $garden = $("#garden");
-    gardenCanvas = $garden[0];
+  $garden = $("#garden");
+  gardenCanvas = $garden[0];
 	gardenCanvas.width = $("#loveHeart").width();
-    gardenCanvas.height = $("#loveHeart").height()
-    gardenCtx = gardenCanvas.getContext("2d");
-    gardenCtx.globalCompositeOperation = "lighter";
-    garden = new Garden(gardenCtx, gardenCanvas);
+  gardenCanvas.height = $("#loveHeart").height()
+  gardenCtx = gardenCanvas.getContext("2d");
+  gardenCtx.globalCompositeOperation = "lighter";
+  garden = new Garden(gardenCtx, gardenCanvas);
 	
 	$("#content").css("width", $loveHeart.width() + $("#code").width());
 	$("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
