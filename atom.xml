@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="https://github.com/pengkw/"/>
-  <updated>2015-01-15T02:55:51.109Z</updated>
+  <updated>2015-02-13T09:14:48.938Z</updated>
   <id>https://github.com/pengkw/</id>
   
   <author>
@@ -15,14 +15,45 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[git相关记录]]></title>
+    <link href="https://github.com/pengkw/2015/01/31/git/"/>
+    <id>https://github.com/pengkw/2015/01/31/git/</id>
+    <published>2015-01-31T09:48:09.000Z</published>
+    <updated>2015-01-31T09:58:58.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="相关命令介绍">相关命令介绍</h2>
+<h3 id="git_reset_回退到某个版本">git reset 回退到某个版本</h3>
+<h3 id="git_stash_暂存工作空间内容">git stash 暂存工作空间内容</h3>
+<p>使用的时候配合list apply等命令  </p>
+<h3 id="git_show_查看某个版本改动">git show 查看某个版本改动</h3>
+<h2 id="使用案例">使用案例</h2>
+<ol>
+<li>git log 显示本地我已經提交了a, b, c三个版本。如果我想回退到b版本，可以直接使用git reset b命令，这样工作空间就被回退到那个版本，通过git status命令可以查看c版本的那些改动全部都变成未提交的了，至于之后要丢弃掉这些更改，还是要做其他的处理根据需要而定。</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[记录使用git过程中相关命令]]>
+    
+    </summary>
+    
+      <category term="git" scheme="https://github.com/pengkw/tags/git/"/>
+    
+      <category term="git" scheme="https://github.com/pengkw/categories/git/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[第三方网站资源整理]]></title>
     <link href="https://github.com/pengkw/2015/01/15/third-site-link/"/>
     <id>https://github.com/pengkw/2015/01/15/third-site-link/</id>
     <published>2015-01-15T02:39:42.000Z</published>
-    <updated>2015-01-15T02:55:33.000Z</updated>
+    <updated>2015-02-12T06:40:27.000Z</updated>
     <content type="html"><![CDATA[<h1 id="技术">技术</h1>
+<h2 id="博客">博客</h2>
+<p><a href="http://www.wbrecom.com/" target="_blank" rel="external">微博推荐</a></p>
 <h2 id="Android学习资源整理">Android学习资源整理</h2>
-<p><a href="http://hukai.me/android-training-course-in-chinese/index.html" target="_blank" rel="external">Google Android官方培训课程中文版</a><br><a href="http://lzyblog.com/" target="_blank" rel="external">lzy’s blog</a></p>
+<p><a href="http://hukai.me/android-training-course-in-chinese/index.html" target="_blank" rel="external">Google Android官方培训课程中文版</a><br>[]胡凯(<a href="http://hukai.me/" target="_blank" rel="external">http://hukai.me/</a>)<br><a href="http://lzyblog.com/" target="_blank" rel="external">lzy’s blog</a><br>[stackvoid博客]（<a href="http://stackvoid.com/）" target="_blank" rel="external">http://stackvoid.com/）</a><br><a href="http://blog.csdn.net/fwy19930618/article/category/2217405" target="_blank" rel="external">50个Android开发技巧</a><br><a href="http://www.androidweekly.cn/" target="_blank" rel="external">Android开发技术周报</a></p>
+<h2 id="c语言">c语言</h2>
+<p><a href="http://avnpc.com/pages/c-pointer" target="_blank" rel="external">征服c指针</a><br><a href="http://fresh2refresh.com/" target="_blank" rel="external">c语言学习资源</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[整理一些好的网站链接]]>

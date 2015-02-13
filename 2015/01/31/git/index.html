@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>第三方网站资源整理 | 总是遗忘</title>
+    <title>git相关记录 | 总是遗忘</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="pengkw">
     
-    <meta name="description" itemprop="description" content="整理一些好的网站链接">
+    <meta name="description" itemprop="description" content="记录使用git过程中相关命令">
     
     
     
@@ -68,15 +68,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/01/15/third-site-link/" title="第三方网站资源整理" itemprop="url">第三方网站资源整理</a>
+      <a href="/2015/01/31/git/" title="git相关记录" itemprop="url">git相关记录</a>
   </h1>
   <p class="article-author">By
     
       <a href="https://github.com/pengkw" title="pengkw">pengkw</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-01-15T02:39:42.000Z" itemprop="datePublished">1月 15 2015</time>
-    更新日期:<time datetime="2015-02-12T06:40:27.000Z" itemprop="dateModified">2月 12 2015</time>
+    <time datetime="2015-01-31T09:48:09.000Z" itemprop="datePublished">1月 31 2015</time>
+    更新日期:<time datetime="2015-01-31T09:58:58.000Z" itemprop="dateModified">1月 31 2015</time>
     
   </p>
 </header>
@@ -85,31 +85,38 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#技术"><span class="toc-number">1.</span> <span class="toc-text">技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#博客"><span class="toc-number">1.1.</span> <span class="toc-text">博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android学习资源整理"><span class="toc-number">1.2.</span> <span class="toc-text">Android学习资源整理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#c语言"><span class="toc-number">1.3.</span> <span class="toc-text">c语言</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#相关命令介绍"><span class="toc-number">1.</span> <span class="toc-text">相关命令介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git_reset_回退到某个版本"><span class="toc-number">1.1.</span> <span class="toc-text">git reset 回退到某个版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git_stash_暂存工作空间内容"><span class="toc-number">1.2.</span> <span class="toc-text">git stash 暂存工作空间内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git_show_查看某个版本改动"><span class="toc-number">1.3.</span> <span class="toc-text">git show 查看某个版本改动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用案例"><span class="toc-number">2.</span> <span class="toc-text">使用案例</span></a></li></ol>
 		</div>
 		
-		<h1 id="技术">技术</h1>
-<h2 id="博客">博客</h2>
-<p><a href="http://www.wbrecom.com/" target="_blank" rel="external">微博推荐</a></p>
-<h2 id="Android学习资源整理">Android学习资源整理</h2>
-<p><a href="http://hukai.me/android-training-course-in-chinese/index.html" target="_blank" rel="external">Google Android官方培训课程中文版</a><br>[]胡凯(<a href="http://hukai.me/" target="_blank" rel="external">http://hukai.me/</a>)<br><a href="http://lzyblog.com/" target="_blank" rel="external">lzy’s blog</a><br>[stackvoid博客]（<a href="http://stackvoid.com/）" target="_blank" rel="external">http://stackvoid.com/）</a><br><a href="http://blog.csdn.net/fwy19930618/article/category/2217405" target="_blank" rel="external">50个Android开发技巧</a><br><a href="http://www.androidweekly.cn/" target="_blank" rel="external">Android开发技术周报</a></p>
-<h2 id="c语言">c语言</h2>
-<p><a href="http://avnpc.com/pages/c-pointer" target="_blank" rel="external">征服c指针</a><br><a href="http://fresh2refresh.com/" target="_blank" rel="external">c语言学习资源</a></p>
+		<h2 id="相关命令介绍">相关命令介绍</h2>
+<h3 id="git_reset_回退到某个版本">git reset 回退到某个版本</h3>
+<h3 id="git_stash_暂存工作空间内容">git stash 暂存工作空间内容</h3>
+<p>使用的时候配合list apply等命令  </p>
+<h3 id="git_show_查看某个版本改动">git show 查看某个版本改动</h3>
+<h2 id="使用案例">使用案例</h2>
+<ol>
+<li>git log 显示本地我已經提交了a, b, c三个版本。如果我想回退到b版本，可以直接使用git reset b命令，这样工作空间就被回退到那个版本，通过git status命令可以查看c版本的那些改动全部都变成未提交的了，至于之后要丢弃掉这些更改，还是要做其他的处理根据需要而定。</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/整理/">整理</a>
+  <span></span> <a href="/tags/git/">git</a>
   </div>
 
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/git/">git</a>
+</div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="https://github.com/pengkw/2015/01/15/third-site-link/" data-title="第三方网站资源整理 | 总是遗忘" data-tsina="null" class="share clearfix">
+  <div data-url="https://github.com/pengkw/2015/01/31/git/" data-title="git相关记录 | 总是遗忘" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -118,19 +125,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/01/31/git/" title="git相关记录">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  git相关记录</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/11/19/storm-learn/"  title="storm学习">
+<a href="/2015/01/15/third-site-link/"  title="第三方网站资源整理">
  <strong>NEXT:</strong><br/> 
- <span>storm学习
+ <span>第三方网站资源整理
 </span>
 </a>
 </div>
@@ -147,7 +146,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#技术"><span class="toc-number">1.</span> <span class="toc-text">技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#博客"><span class="toc-number">1.1.</span> <span class="toc-text">博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android学习资源整理"><span class="toc-number">1.2.</span> <span class="toc-text">Android学习资源整理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#c语言"><span class="toc-number">1.3.</span> <span class="toc-text">c语言</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#相关命令介绍"><span class="toc-number">1.</span> <span class="toc-text">相关命令介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git_reset_回退到某个版本"><span class="toc-number">1.1.</span> <span class="toc-text">git reset 回退到某个版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git_stash_暂存工作空间内容"><span class="toc-number">1.2.</span> <span class="toc-text">git stash 暂存工作空间内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git_show_查看某个版本改动"><span class="toc-number">1.3.</span> <span class="toc-text">git show 查看某个版本改动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用案例"><span class="toc-number">2.</span> <span class="toc-text">使用案例</span></a></li></ol>
   </div>
 
 <div id="asidepart">
